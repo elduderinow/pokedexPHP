@@ -59,8 +59,15 @@ include("getinfo.php");
                                 </div>
                             </div>
                             <div class="img-wrapper">
-                                <img id="mainimg" class="pimg"
-                                     src="<?php echo $pokeObj->sprite; ?>">
+                               <?php
+                                if ($pokeObj->sprite == ""){
+                                    echo "";
+                                } else {
+                                    echo '<img id="mainimg" class="pimg" src="';
+                                    echo $pokeObj->sprite;
+                                    echo '"/>';
+                                }
+                                ?>
                             </div>
 
                             <div class="text-wrapper">
@@ -72,10 +79,17 @@ include("getinfo.php");
                                 <ul id="evolution-list">
                                     <li>
                                         <div id="evolveName"><?php echo $pokeObj->evoname; ?></div>
-                                        <img id="evolvesprite1" src="<?php echo $pokeObj->evosprite; ?>">
+                                        <?php
+                                        if ($pokeObj->evosprite == ""){
+                                            echo "";
+                                        } else {
+                                            echo '<img id="evolvesprite1" src="';
+                                            echo $pokeObj->evosprite;
+                                            echo '"';
+                                        }
+                                        ?>
                                     </li>
                                 </ul>
-
                             </div>
                         </div>
                     </div>
@@ -116,13 +130,33 @@ include("getinfo.php");
                             <div class="col-6">
                                 <h3>Abilities</h3>
                                 <ol id="moves" class="lists">
-                                    <?php echo $pokeObj->moves; ?>
+                                    <?php
+                                    if ($pokeObj->abilitites == ""){
+                                        echo "";
+                                    } else {
+                                        foreach ($pokeObj->moves as $elem) {
+                                            echo "<li>";
+                                            echo $elem;
+                                            echo "</li>";
+                                        }
+                                    }
+                                    ?>
                                 </ol>
                             </div>
                             <div class="col-6">
                                 <h3>Passive Abilities</h3>
                                 <ol class="lists">
-                                    <?php echo $pokeObj->abilitites; ?>
+                                    <?php
+                                        if ($pokeObj->abilitites == ""){
+                                            echo "";
+                                        } else {
+                                            foreach ($pokeObj->abilitites as $elem) {
+                                                echo "<li>";
+                                                echo $elem;
+                                                echo "</li>";
+                                            }
+                                        }
+                                    ?>
                                 </ol>
                             </div>
                         </div>
@@ -160,10 +194,10 @@ include("getinfo.php");
             </div>
         </div>
     </div>
-    <audio style="opacity: 0" autoplay="autoplay" controls="controls" >
+   <!-- <audio style="opacity: 0" autoplay="autoplay" controls="controls" >
          <source src="files/101-opening.mp3" />
          <source src="files/102-palettetowntheme.mp3" />
-     </audio>
+     </audio>-->
 </div>
 
 </body>

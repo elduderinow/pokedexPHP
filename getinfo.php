@@ -66,17 +66,14 @@ function getinfo($results, $results_sec)
     //Find and display the pokemon ATT.
     $pokeObj->attack = $results["stats"][1]["base_stat"];
 
-
     //Find and display the pokemon TYPE.
     $pokeObj->type = $results["types"][0]["type"]["name"];
-
 
     //Find and display the pokemon SPRITE.
     $pokeObj->sprite = $results["sprites"]["front_default"];
 
     //Find and display the pokemon description.
     $pokeObj->desc = $results_sec["flavor_text_entries"][10]["flavor_text"];
-
 
     //Find and display the pokemon passive abilities.
     $pokeAbil = $results["abilities"];
@@ -85,7 +82,7 @@ function getinfo($results, $results_sec)
         $abilities[] = $elem["ability"]["name"];
     }
     //using the implode method, to display the array as a string with a separator of choice.
-    $pokeObj->abilitites = "<li>" . implode('</li><li>', $abilities) . "</li>";
+    $pokeObj->abilitites = $abilities;
 
     //Locate all the names of the pokemon moves (which are nested in different locations) do a foreach and push them to a new arary.
     $pokmoves = [];
@@ -103,7 +100,8 @@ function getinfo($results, $results_sec)
     }
 
     //using the implode method, to display the array as a string with a separator of choice.
-    $pokeObj->moves = "<li>" . implode('</li><li>', $pokres) . "</li>";
+    // $pokeObj->moves = "<li>" . implode('</li><li>', $pokres) . "</li>";
+    $pokeObj->moves = $pokres;
 
 }
 
