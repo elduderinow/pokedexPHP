@@ -31,7 +31,13 @@ The purpose of this project is to strip all the JS and replace it with PHP to le
 
 - I decided that before continuing making the pokedex I need to do a crash course on codecademy to understand the basics of PHP, this will help me in progressing faster through the assignment with a deeper understanding.
 
+- The crash course was usefull but was going too slow, so I watched a youtube tut on double speed instead.
+
+- I first struggled with accessing the multidimensional array in PHP, but once found it was easy to navigate. 
+
+- Using classes in PHP for the first time was also confusing, It all works, but I think I didn't quite get and/or understand the full potential yet. There's much too learn, but I am excited.
+
 
 ## THE PROJECT ITSELF & MY OPINION
-update needed
+Good call to recycle a project we already did to learn PHP. Had fun doing it and again learned a bunch of stuff.
 

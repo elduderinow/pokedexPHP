@@ -17,8 +17,9 @@
 
 </head>
 <body>
-
-
+<?php
+include("getinfo.php");
+?>
 <div class="container-fluid">
     <div class="row">
         <div class="field-container col-sm-12">
@@ -50,31 +51,30 @@
                     <div class="display-wrapper">
                         <div class="display">
                             <div class="stats-wrapper row">
-                                <div id="poke-HP" class="col-4">10 HP</div>
-                                <div id="poke-Atk" class="col-4">30 Attack</div>
-                                <div id="poke-type" class="col-4">Fire</div>
-                                <div id="pokename" class="col-12">Charmander</div>
+                                <div id="poke-HP" class="col-4"> <?php echo $pokeObj->hp; ?> HP</div>
+                                <div id="poke-Atk" class="col-4"> <?php echo $pokeObj->attack; ?> Attack</div>
+                                <div id="poke-type" class="col-4"> <?php echo $pokeObj->type; ?></div>
+                                <div id="pokename" class="col-12">
+                                    <?php echo $pokeObj->name; ?>
+                                </div>
                             </div>
                             <div class="img-wrapper">
                                 <img id="mainimg" class="pimg"
-                                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png">
+                                     src="<?php echo $pokeObj->sprite; ?>">
                             </div>
 
                             <div class="text-wrapper">
                                 <div id="poke-text" class="">
-                                    Obviously prefers hot places. When it rains, steamis said to spout from the tip of its tail.
+                                    <?php echo $pokeObj->desc; ?>
                                 </div>
                             </div>
                             <div class="display-evo">
                                 <ul id="evolution-list">
                                     <li>
-                                        <div id="evolveName">Pokemon</div>
-                                        <img id="evolvesprite1" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png">
+                                        <div id="evolveName"><?php echo $pokeObj->evoname; ?></div>
+                                        <img id="evolvesprite1" src="<?php echo $pokeObj->evosprite; ?>">
                                     </li>
                                 </ul>
-
-
-
 
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                         <div class="col">
                             <div class="midbut select"></div>
                             <div class="midbut start"></div>
-                            <div id="poke-id" class="screen">ID: 1</div>
+                            <div id="poke-id" class="screen">ID: <?php echo $pokeObj->id; ?></div>
                         </div>
                         <div class="col">
                             <!-- <div class="plus">
@@ -116,25 +116,20 @@
                             <div class="col-6">
                                 <h3>Abilities</h3>
                                 <ol id="moves" class="lists">
-
+                                    <?php echo $pokeObj->moves; ?>
                                 </ol>
                             </div>
                             <div class="col-6">
                                 <h3>Passive Abilities</h3>
                                 <ol class="lists">
-                                    <li id="pabil1">passive abilties 1</li>
-                                    <li id="pabil2">passive abilties 1</li>
+                                    <?php echo $pokeObj->abilitites; ?>
                                 </ol>
                             </div>
                         </div>
                         <div id="input" class="input">
-                            <form action ="index.php" method="get">
+                            <form action="index.php" method="get">
                                 <input type="text" name="poke-input" id="poke-input" placeholder="Search Pokémon"/>
                                 <input type="submit">
-                                <?php
-                                $pokeName = $_GET['poke-input'];
-                                include ("getinfo.php");
-                                ?>
                             </form>
                         </div>
                     </div>
@@ -151,6 +146,7 @@
                             <li>STU</li>
                             <li>VWX</li>
                             <li>YZ</li>
+                            <li><a target="_blank" href="https://theuselessweb.com/">YOLO</a></li>
                         </ul>
                     </div>
 
@@ -164,10 +160,10 @@
             </div>
         </div>
     </div>
-   <!-- <audio autoplay="autoplay" controls="controls" >
-        <source src="files/101-opening.mp3" />
-        <source src="files/102-palettetowntheme.mp3" />
-    </audio>-->
+    <audio style="opacity: 0" autoplay="autoplay" controls="controls" >
+         <source src="files/101-opening.mp3" />
+         <source src="files/102-palettetowntheme.mp3" />
+     </audio>
 </div>
 
 </body>
