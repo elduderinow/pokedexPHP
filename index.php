@@ -47,13 +47,27 @@ include("getinfo.php");
                     </svg>
 
                     <div class="pdname">ポケモン図鑑</div>
-
                     <div class="display-wrapper">
-                        <div class="display">
+                        <div style="background-image: linear-gradient(
+                        <?php
+                        if ($pokeObj->type2 == "") {
+                            echo $pokeObj->bgcolortop.",".$pokeObj->bgcolortop;
+                        } else {
+                            echo $pokeObj->bgcolortop.",".$pokeObj->bgcolorbottom;
+                        }
+                        ?>
+                        );" class="display">
                             <div class="stats-wrapper row">
                                 <div id="poke-HP" class="col-4"> <?php echo $pokeObj->hp; ?> HP</div>
                                 <div id="poke-Atk" class="col-4"> <?php echo $pokeObj->attack; ?> Attack</div>
-                                <div id="poke-type" class="col-4"> <?php echo $pokeObj->type; ?></div>
+                                <div id="poke-type" class="col-4">
+                                    <?php
+                                    if ($pokeObj->type2 == null) {
+                                        echo $pokeObj->type;
+                                    } else {
+                                        echo $pokeObj->type."/".$pokeObj->type2;
+                                    }
+                                    ?></div>
                                 <div id="pokename" class="col-12">
                                     <?php echo $pokeObj->name; ?>
                                 </div>
@@ -92,6 +106,7 @@ include("getinfo.php");
                                 </ul>
                             </div>
                         </div>
+
                     </div>
                     <div class="left-rand-buttons row">
                         <div class="col">
@@ -103,12 +118,9 @@ include("getinfo.php");
                             <div id="poke-id" class="screen">ID: <?php echo $pokeObj->id; ?></div>
                         </div>
                         <div class="col">
-                            <!-- <div class="plus">
-                                 <div class="blokplus blok1"></div>
-                                 <div class="blokplus blok2"></div>
-                                 <div class="blokplus blok3"></div>
-                             </div>-->
-                            <svg id="plusbutton" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+
+
+                          <svg id="plusbutton" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                                  viewBox="0 0 207 207">
                                 <path d="M738.5,412.66v47.68a10.16,10.16,0,0,1-10.16,10.16H679.16A10.16,10.16,0,0,0,669,480.66v49.18A10.16,10.16,0,0,1,658.84,540H611.16A10.16,10.16,0,0,1,601,529.84V480.66a10.16,10.16,0,0,0-10.16-10.16H541.66a10.16,10.16,0,0,1-10.16-10.16V412.66a10.16,10.16,0,0,1,10.16-10.16h49.18A10.16,10.16,0,0,0,601,392.34V343.16A10.16,10.16,0,0,1,611.16,333h47.68A10.16,10.16,0,0,1,669,343.16v49.18a10.16,10.16,0,0,0,10.16,10.16h49.18A10.16,10.16,0,0,1,738.5,412.66Z"
                                       transform="translate(-531.5 -333)"/>
@@ -131,8 +143,8 @@ include("getinfo.php");
                                 <h3>Abilities</h3>
                                 <ol id="moves" class="lists">
                                     <?php
-                                    if ($pokeObj->abilitites == ""){
-                                        echo "";
+                                    if ($pokeObj->moves == ""){
+                                        echo "it's empty";
                                     } else {
                                         foreach ($pokeObj->moves as $elem) {
                                             echo "<li>";
@@ -147,10 +159,10 @@ include("getinfo.php");
                                 <h3>Passive Abilities</h3>
                                 <ol class="lists">
                                     <?php
-                                        if ($pokeObj->abilitites == ""){
+                                        if ($pokeObj->getAbility() == ""){
                                             echo "";
                                         } else {
-                                            foreach ($pokeObj->abilitites as $elem) {
+                                            foreach ($pokeObj->getAbility() as $elem) {
                                                 echo "<li>";
                                                 echo $elem;
                                                 echo "</li>";
@@ -187,8 +199,15 @@ include("getinfo.php");
                     <div class="right-rand-buttons">
                         <div class="but1 rightbut"></div>
                         <div class="but2 rightbut"></div>
-                        <div id="random" class="rand-button">RND</div>
-                        <div id="button" class="rand-button">&nbsp;</div>
+                        <form class="randbut prev" method="get">
+                            <button id="button" class="rand-button" name="poke-input" type="submit" value="<?php echo $pokeObj->id - 1 ?>">Prev</button>
+                        </form>
+                        <form class="randbut next" method="get">
+                            <button id="button" class="rand-button" name="poke-input" type="submit" value="<?php echo $pokeObj->id + 1 ?>">Next</button>
+                        </form>
+                        <form class="randbut random" method="get">
+                            <button id="button" class="rand-button" name="poke-input" type="submit" value="<?php echo $pokeObj -> getRand() ?>">RND</button>
+                        </form>
                     </div>
                 </div>
             </div>

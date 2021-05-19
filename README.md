@@ -3,7 +3,8 @@
 Creating a Pokedex in HTML and CSS and javascript.
 
 - Repository: `pokedexPHP`
-- Link: https://github.com/elduderinow/pokedexPHP
+- Link app: https://elduderinow.github.io/pokedexPHP/
+- Link github: https://github.com/elduderinow/pokedexPHP
 - Language: HTML, SCSS, PHP
 
 ## WHAT IS A POKEDEX

@@ -235,7 +235,7 @@ audio {
   position: relative;
   margin: 0 auto;
   width: 450px;
-  background-color: #9cc2c2;
+  background-color: white;
   margin-top: 20px;
   -moz-box-shadow: inset 0 0 7px #293942;
   -webkit-box-shadow: inset 0 0 7px #293942;
@@ -245,7 +245,7 @@ audio {
 #pokedex .poke-left .display .display-evo ul {
   font-family: "Press Start 2P", cursive;
   font-size: 10px;
-  color: #1b546f;
+  color: #1e2f58;
   padding-left: 0;
   margin-bottom: 0;
   padding: 10px 0;
@@ -255,7 +255,7 @@ audio {
   list-style-type: none;
 }
 #pokedex .poke-left .display .stats-wrapper {
-  color: #1b546f;
+  color: #1e2f58;
   padding-top: 10px;
   font-family: "Press Start 2P", cursive;
   font-size: 9px;
@@ -305,7 +305,7 @@ audio {
 #pokedex .poke-left .display .text-wrapper #poke-text {
   font-family: "Press Start 2P", cursive;
   font-size: 9px;
-  color: #1b546f;
+  color: #1e2f58;
   height: 50px;
   overflow: scroll;
 }
@@ -322,28 +322,6 @@ audio {
   margin: 0 auto;
   height: 300px;
   width: 450px;
-  /*
-        .plus {
-             transform: translateX(60px);
-          .blokplus {
-
-            width: 30px;
-            height:30px;
-            background-color: black;
-
-            -moz-box-shadow: 0 2px 2px #2b0a09;
-            -webkit-box-shadow: 0 2px 2px #2b0a09;
-            box-shadow: 0 2px 2px #2b0a09;
-          }
-
-          .
-          .blok2 {
-            width: 90px;
-            transform: translateX(-30px);
-          }
-        }
-
-  */
   padding-top: 50px;
 }
 #pokedex .poke-left .left-rand-buttons .circle {
@@ -376,6 +354,23 @@ audio {
   float: right;
   background-color: blue;
   border-top: 2px solid #5858ea;
+}
+#pokedex .poke-left .left-rand-buttons .plus {
+  color: white;
+  transform: translate(10px, 35px);
+}
+#pokedex .poke-left .left-rand-buttons .plus .blokplus {
+  width: 50px;
+  height: 30px;
+  background-color: black;
+  float: left;
+  border-radius: 20px;
+  -moz-box-shadow: 0 2px 2px #2b0a09;
+  -webkit-box-shadow: 0 2px 2px #2b0a09;
+  box-shadow: 0 2px 2px #2b0a09;
+}
+#pokedex .poke-left .left-rand-buttons .plus .blok2 {
+  margin-left: 10px;
 }
 #pokedex .poke-left .left-rand-buttons .screen {
   padding-top: 12px;
@@ -557,7 +552,6 @@ audio {
   margin-right: 47px;
 }
 #pokedex .poke-right .right-rand-buttons .rand-button {
-  clear: both;
   text-align: center;
   font-family: "Press Start 2P", cursive;
   padding-top: 15px;
@@ -567,7 +561,6 @@ audio {
   width: 100px;
   height: 50px;
   margin: 5px;
-  margin-top: 40px;
   display: inline-block;
   background-color: #e0e0e0;
   border-top: 2px solid #ffffff;
@@ -584,6 +577,12 @@ audio {
   -moz-box-shadow: 0 1px 1px #2b0a09;
   -webkit-box-shadow: 0 1px 1px #2b0a09;
   box-shadow: 0 1px 1px #2b0a09;
+}
+#pokedex .poke-right .right-rand-buttons form.prev {
+  float: left;
+}
+#pokedex .poke-right .right-rand-buttons form.random {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
