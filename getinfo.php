@@ -115,7 +115,6 @@ function getinfo($results, $results_sec, $results_count)
     //create min and max nr for the randomize button.
     $maxpok = $results_count["count"];
     $ranpok = rand(1, $maxpok);
-    var_dump($ranpok);
 
     $pokeObj -> setRand($ranpok);
 

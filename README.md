@@ -15,13 +15,17 @@ This is a recycled project from this repo: https://github.com/elduderinow/pokede
 The purpose of this project is to strip all the JS and replace it with PHP to learn the new back-end language.
 
 ## FUNCTIONALITIES
-- Working lookup but input of pokemon names and or ID nr.
+- Working lookup button input of pokemon names and or ID nr.
 - Stats like NAME, HP, ATTACK and TYPE are displayed.
-- A brief discription of the pokemon.
+- A brief description of the pokemon.
 - 4 random abilities every time you run the same pokemon.
 - 2 passive abilities are also displayed
 - The previous form of the evolution is displayed.
-- The ID nr is dispayed
+- The ID nr is displayed
+- Random button 
+- prev and nex button
+- Bg changes in a gradient (from top to bottom) based on 2 types of the pokemon, if only 1 type, there's only one color.
+- The pokemons are done in OOP.
 
 ## PROGRESS
 - Setting up the local host, maria DB, vhost etc was quite easy. We had a good and clear guide on doing this.
